@@ -4,7 +4,8 @@ from django.db import models
 
 
 class Fornecedores(models.Model):
-    name = models.CharField('Fornecedor', max_length=200)
+    name = models.CharField( max_length=200)
+    email = models.EmailField(blank=True, default="")
 
     def __str__(self):
         return self.name

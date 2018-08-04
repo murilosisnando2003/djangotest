@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djangoadmin',
-    'teste',
+    'app',
    
 ]
 
@@ -79,8 +79,10 @@ WSGI_APPLICATION = 'djangoadmin.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-
-default_dburl = 'postgres://postgres:Murilao23@localhost:5432/teste'
+#Ladder
+#default_dburl = 'postgres://postgres:Murilao23@localhost:5432/teste'
+#Casa
+default_dburl = 'postgres://postgres:Murilao23@localhost:5432/projeto'
 
 DATABASES = {
     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),

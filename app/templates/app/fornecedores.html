@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if fornecedores %}
+<table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Fornecedor</th>
+            <th>Email</th>
+            <th>Ação</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for fornecedor  in fornecedores %}
+
+            <tr>
+                <th>{{ fornecedor.pk }}</th>
+                <td>{{ fornecedor.name }}</td>
+                <td>{{ fornecedor.email }}</td>
+                <td><a href="{% url 'fornecedor_delete' fornecedor.id %}" class="trash-item"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                <td>
+                   
+                </td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+{% else %}
+
+    <h3>Sem registros...</h3>
+
+{% endif %}
+
+
+{% endblock content %}
