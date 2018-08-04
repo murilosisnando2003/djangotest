@@ -20,3 +20,22 @@ def fornecedor_delete(request, id):
         return redirect('app')
 
     return render(request, 'app/fornecedor_delete_confirm.html', {'fornecedor': fornecedor})    
+
+
+def fornecedor_new(request):
+    form = FornecedoresForm(request.POST or None, request.FILES or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('app')
+    return render(request, 'app/fornecedor_form.html', {'form': form})
+
+def fornecedor_update(request, id):
+    fornecedor = get_object_or_404(Fornecedores, pk=id)
+    form = FornecedoresForm(request.POST or None, request.FILES or None, instance=fornecedor)
+
+    if form.is_valid():
+        form.save()
+        return redirect('app')
+
+    return render(request, 'app/fornecedor_form.html', {'form': form})    
