@@ -22,6 +22,7 @@ def fornecedor_delete(request, id):
     return render(request, 'app/fornecedor_delete_confirm.html', {'fornecedor': fornecedor})    
 
 
+
 def fornecedor_new(request):
     form = FornecedoresForm(request.POST or None, request.FILES or None)
 

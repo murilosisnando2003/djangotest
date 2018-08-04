@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 
-{% block title %} Confirmacao {% endblock %}
+{% block title %} Confirmar Deleção {% endblock %}
 
 {% block content %}
 <table class="table table-hover">
@@ -9,12 +10,11 @@
 
     <a method="POST" enctype="multipart/form-data">
         {% csrf_token %}
+       
         <button type="submit" class="btn btn-danger">Delete</button>
     </a>
 
 </table>    
-
-
 
 {% endblock content %}
 
