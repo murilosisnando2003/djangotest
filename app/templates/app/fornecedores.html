@@ -12,6 +12,7 @@
             <th>#</th>
             <th>Fornecedor</th>
             <th>Email</th>
+            <th>Contato</th>
             <th>Status</th>
             <th>Ação</th>
 
@@ -25,6 +26,7 @@
                 <th>{{ fornecedor.pk }}</th>
                 <td><a href="{% url 'fornecedor_update' fornecedor.id %}">{{ fornecedor.name }}</a></td>
                 <td>{{ fornecedor.email }}</td>
+                <td>{{ fornecedor.contato }}</td>
                 <td>{{ fornecedor.status }}</td>
                
                 <td><a href="{% url 'fornecedor_delete' fornecedor.id %}" class="trash-item"><i class="fa fa-trash" aria-hidden="true"></i></a></td>

@@ -4,4 +4,4 @@ from .models import Fornecedores
 class FornecedoresForm(ModelForm):
     class Meta:
         model = Fornecedores
-        fields = ['name','email','status']
+        fields = ['name','email','status','contato']
